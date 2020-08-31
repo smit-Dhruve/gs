@@ -4,13 +4,11 @@ class Node:
       self.next = None
       self.prev = None
 
-# Create the doubly linked list
 class doubly_linked_list:
 
    def __init__(self):
       self.head = None
-
-# Define the push method to add elements		
+		
    def push(self, NewVal):
 
       NewNode = Node(NewVal)
@@ -18,8 +16,7 @@ class doubly_linked_list:
       if self.head is not None:
          self.head.prev = NewNode
       self.head = NewNode
-
-# Define the insert method to insert the element		
+		
    def insert(self, prev_node, NewVal):
       if prev_node is None:
          return
@@ -30,7 +27,6 @@ class doubly_linked_list:
       if NewNode.next is not None:
          NewNode.next.prev = NewNode
 
-# Define the method to print the linked list 
    def listprint(self, node):
       while (node is not None):
          print(node.data),
