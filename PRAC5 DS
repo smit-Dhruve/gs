@@ -1,41 +1,33 @@
-Linear search
+list. Give user the option to perform Linear
+or Binary search. #
 
-def search(list,n):
-    for i in list:
-        if i== n:
-            print(n," is found at index ",
-            list.index(i)+1)
-            break
-    else:
-        print(n, " is not found, try Again")
+Code:linear
 
-list= [19,5,22,18,2,6,0,100,9]
+def search(arr, n, x): 
+  
+    for i in range (0, n): 
+        if (arr[i] == x): 
+            return i; 
+    return -1; 
+  
+# Driver Code 
+arr = [ 2, 3, 4, 10, 40 ]; 
+x = 10; 
+n = len(arr); 
+result = search(arr, n, x) 
+if(result == -1): 
+    print("Element is not present in array") 
+else: 
+    print("Element is present at index", result);
 
 
-n= int (input("Enter a number to search: "))
-
-search(list,n)
-
-Binary search
-
-
-
-print "* BINARY SEARCH METHOD\n"
-def bsm(arr,start,end,num):
-    if end>=start:
-        mid=start+(end-start)//2
-        if arr[mid]==x:
-            return mid
-        elif arr[mid]>x:
-            return bsm(arr,start,mid-1,x)
-        else:
-            return bsm(arr,mid+1,end,x)
-    else:
-        return -1
-arr=[10,27,36,49,58,69,70]
-x=int(input("Enter the number to be searched : "))
-result=bsm(arr,0,len(arr)-1,x)
-if result != -1:
-    print "Number is found at ",result
+Code binary
+Def binary_search(list value_, search,start,end):
+    if start > end:
+       return -1
+    mid=(start + end)//2
+    if list_values[mid] == search:
+        return mid
+    if element < list_values [mid]:
+       return binary_search(list_values, search,start,mid+1) 
 else:
-    print "Number is not present"
